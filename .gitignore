@@ -1,3 +1,7 @@
 .idea
 .env
 *.iml
+*.tfstate
+azurek8s
+*.tfvars
+*.tfplan

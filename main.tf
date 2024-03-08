@@ -1,3 +1,9 @@
+resource "null_resource" "provider_registration" {
+  provisioner "local-exec" {
+    command = "az provider register --namespace 'Microsoft.Compute'"
+  }
+}
+
 resource "random_pet" "rg_name" {
   prefix = var.resource_group_name_prefix
 }

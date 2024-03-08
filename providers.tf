@@ -10,7 +10,7 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.91.0"
+      version = "~>3.0"
     }
     time = {
       source  = "hashicorp/time"
@@ -21,9 +21,5 @@ terraform {
 
 provider "azurerm" {
   features {}
-
-  subscription_id = "${env.AZURE_SUBSCRIPTION_ID}"
-  tenant_id       = "${env.AZURE_SUBSCRIPTION_TENANT_ID}"
-  client_id       = "${env.AZURE_SERVICE_PRINCIPAL_APPID}>"
-  client_secret   = "${env.AZURE_SERVICE_PRINCIPAL_SECRET}"
+  skip_provider_registration = true
 }
